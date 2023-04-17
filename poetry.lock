@@ -1120,7 +1120,6 @@ files = [
     {file = "debugpy-1.6.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9b5d1b13d7c7bf5d7cf700e33c0b8ddb7baf030fcf502f76fc061ddd9405d16c"},
     {file = "debugpy-1.6.6-cp38-cp38-win32.whl", hash = "sha256:70ab53918fd907a3ade01909b3ed783287ede362c80c75f41e79596d5ccacd32"},
     {file = "debugpy-1.6.6-cp38-cp38-win_amd64.whl", hash = "sha256:c05349890804d846eca32ce0623ab66c06f8800db881af7a876dc073ac1c2225"},
-    {file = "debugpy-1.6.6-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:11a0f3a106f69901e4a9a5683ce943a7a5605696024134b522aa1bfda25b5fec"},
     {file = "debugpy-1.6.6-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a771739902b1ae22a120dbbb6bd91b2cae6696c0e318b5007c5348519a4211c6"},
     {file = "debugpy-1.6.6-cp39-cp39-win32.whl", hash = "sha256:549ae0cb2d34fc09d1675f9b01942499751d174381b6082279cf19cdb3c47cbe"},
     {file = "debugpy-1.6.6-cp39-cp39-win_amd64.whl", hash = "sha256:de4a045fbf388e120bb6ec66501458d3134f4729faed26ff95de52a754abddb1"},
@@ -2743,6 +2742,7 @@ optional = true
 python-versions = "*"
 files = [
     {file = "libclang-15.0.6.1-py2.py3-none-macosx_10_9_x86_64.whl", hash = "sha256:8621795e07b87e17fc7aac9f071bc7fe6b52ed6110c0a96a9975d8113c8c2527"},
+    {file = "libclang-15.0.6.1-py2.py3-none-macosx_11_0_arm64.whl", hash = "sha256:0bf192c48a8d2992fc5034393ddc99e772ac30e105df84927d62fc88ef8a659f"},
     {file = "libclang-15.0.6.1-py2.py3-none-manylinux2010_x86_64.whl", hash = "sha256:69b01a23ab543908a661532595daa23cf88bd96d80e41f58ba0eaa6a378fe0d8"},
     {file = "libclang-15.0.6.1-py2.py3-none-manylinux2014_aarch64.whl", hash = "sha256:4a5188184b937132c198ee9de9a8a2316d5fdd1a825398d5ad1a8f5e06f9b40e"},
     {file = "libclang-15.0.6.1-py2.py3-none-manylinux2014_armv7l.whl", hash = "sha256:f7ffa02ac5e586cfffde039dcccc439d88d0feac7d77bf9426d9ba7543d16545"},
@@ -5179,18 +5179,18 @@ test = ["pytest (>=6,!=7.0.0,!=7.0.1)", "pytest-cov (>=3.0.0)", "pytest-qt"]
 
 [[package]]
 name = "redis"
-version = "4.5.1"
+version = "4.5.4"
 description = "Python client for Redis database and key-value store"
 category = "main"
 optional = true
 python-versions = ">=3.7"
 files = [
-    {file = "redis-4.5.1-py3-none-any.whl", hash = "sha256:5deb072d26e67d2be1712603bfb7947ec3431fb0eec9c578994052e33035af6d"},
-    {file = "redis-4.5.1.tar.gz", hash = "sha256:1eec3741cda408d3a5f84b78d089c8b8d895f21b3b050988351e925faf202864"},
+    {file = "redis-4.5.4-py3-none-any.whl", hash = "sha256:2c19e6767c474f2e85167909061d525ed65bea9301c0770bb151e041b7ac89a2"},
+    {file = "redis-4.5.4.tar.gz", hash = "sha256:73ec35da4da267d6847e47f68730fdd5f62e2ca69e3ef5885c6a78a9374c3893"},
 ]
 
 [package.dependencies]
-async-timeout = ">=4.0.2"
+async-timeout = {version = ">=4.0.2", markers = "python_version <= \"3.11.2\""}
 
 [package.extras]
 hiredis = ["hiredis (>=1.0.0)"]
@@ -7595,10 +7595,10 @@ docs = ["furo", "jaraco.packaging (>=9)", "jaraco.tidelift (>=1.4)", "rst.linker
 testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more-itertools", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-flake8", "pytest-mypy (>=0.9.1)"]
 
 [extras]
-all = ["anthropic", "cohere", "openai", "nlpcloud", "huggingface_hub", "manifest-ml", "elasticsearch", "opensearch-py", "google-search-results", "faiss-cpu", "sentence-transformers", "transformers", "spacy", "nltk", "wikipedia", "beautifulsoup4", "tiktoken", "torch", "jinja2", "pinecone-client", "weaviate-client", "redis", "google-api-python-client", "wolframalpha", "qdrant-client", "tensorflow-text", "pypdf", "networkx", "nomic"]
+all = ["anthropic", "cohere", "openai", "nlpcloud", "huggingface_hub", "manifest-ml", "elasticsearch", "opensearch-py", "google-search-results", "faiss-cpu", "sentence-transformers", "transformers", "spacy", "nltk", "wikipedia", "beautifulsoup4", "tiktoken", "torch", "jinja2", "pinecone-client", "weaviate-client", "redis", "google-api-python-client", "wolframalpha", "qdrant-client", "tensorflow-text", "pypdf", "networkx", "nomic", "aleph-alpha-client", "deeplake"]
 llms = ["anthropic", "cohere", "openai", "nlpcloud", "huggingface_hub", "manifest-ml", "torch", "transformers"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.1,<4.0"
-content-hash = "6394a04c5f73c711b6f6e0e8e41765048653090c51aae6b5cc3d6fb2910ca17c"
+content-hash = "e72894e84df711d9059ee44ca3f338c4ba2a32de95469ce7f3d13492089a506c"
